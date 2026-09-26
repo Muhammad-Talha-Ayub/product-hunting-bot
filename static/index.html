@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winning Products Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <div class="backdrop" aria-hidden="true"></div>
+
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 3L20 8V16L12 21L4 16V8L12 3Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 8L16 10.5V15.5L12 18L8 15.5V10.5L12 8Z"
+                fill="currentColor"
+                opacity="0.35"
+              />
+            </svg>
+          </div>
+          <div>
+            <p class="brand-eyebrow">Product research</p>
+            <h1 class="brand-title">Winning Products Assistant</h1>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <span class="status-pill" id="status-pill">
+            <span class="status-dot"></span>
+            Online
+          </span>
+          <button type="button" class="btn ghost" id="new-chat-btn" title="Start a new conversation">
+            New chat
+          </button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="sidebar">
+          <section class="panel">
+            <h2>What we offer</h2>
+            <ul class="offer-list">
+              <li>
+                <span class="offer-tag dropship">Dropshipping</span>
+                <p><strong>5 winning products</strong> — $25</p>
+              </li>
+              <li>
+                <span class="offer-tag market">Marketplace</span>
+                <p><strong>1 winning product</strong> — $25</p>
+                <p class="muted">Amazon, eBay, Etsy &amp; more</p>
+              </li>
+            </ul>
+          </section>
+          <section class="panel">
+            <h2>How it works</h2>
+            <ol class="steps">
+              <li>Share your niche</li>
+              <li>Tell us about your store or platform</li>
+              <li>Get a tailored winning-product package</li>
+            </ol>
+          </section>
+          <p class="sidebar-note">
+            Replies match your language — English, Urdu, Roman Urdu, Hindi, Arabic, Spanish, and more.
+          </p>
+        </aside>
+
+        <section class="chat-shell" aria-label="Chat">
+          <div class="messages" id="messages" role="log" aria-live="polite"></div>
+
+          <div class="composer-wrap">
+            <form class="composer" id="chat-form">
+              <label class="sr-only" for="message-input">Message</label>
+              <textarea
+                id="message-input"
+                rows="1"
+                placeholder="Describe your niche or ask a question…"
+                autocomplete="off"
+                maxlength="4000"
+              ></textarea>
+              <button type="submit" class="btn send" id="send-btn" aria-label="Send message">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M5 12H19M19 12L13 6M19 12L13 18"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </form>
+            <p class="composer-hint">Press Enter to send · Shift+Enter for a new line</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="message-template">
+      <article class="message">
+        <div class="avatar" aria-hidden="true"></div>
+        <div class="bubble">
+          <p class="meta"></p>
+          <div class="content"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="/static/js/app.js" defer></script>
+  </body>
+</html>
